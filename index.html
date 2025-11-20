@@ -380,18 +380,6 @@
             transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .feature-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(255, 60, 0, 0.5);
-            box-shadow: 
-                0 0 0 1px rgba(255, 60, 0, 0.3),
-                0 30px 80px rgba(255, 60, 0, 0.2);
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
         .feature-card h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -411,6 +399,24 @@
             position: relative;
             z-index: 1;
             font-weight: 400;
+        }
+
+        /* Feature Card Links */
+        .features a {
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .features a:hover .feature-card {
+            transform: translateY(-12px);
+            border-color: rgba(255, 60, 0, 0.5);
+            box-shadow: 
+                0 0 0 1px rgba(255, 60, 0, 0.3),
+                0 30px 80px rgba(255, 60, 0, 0.2);
+        }
+
+        .features a:hover .feature-card::before {
+            opacity: 1;
         }
 
         /* Footer */
@@ -540,18 +546,24 @@
 
         <!-- Features -->
         <div class="features">
-            <div class="feature-card">
-                <h3>🏈 The Car</h3>
-                <p>Step inside Showdawg's legendary Corvette, signed by over 50 Cleveland Browns players. This rolling piece of Browns history is a testament to decades of dedication to the orange and brown.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🏠 The House</h3>
-                <p>Explore the incredible collection of historical Browns artifacts housed in Showdawg's home—a shrine so impressive that the legendary Jim Brown himself paid a visit to witness the treasures within.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🎙️ The Podcast</h3>
-                <p>Join us every Thursday for conversations about Browns football, superfandom, and the stories that make Cleveland the most passionate football city in America. Here We Go Brownies!</p>
-            </div>
+            <a href="car.html" style="text-decoration: none; color: inherit;">
+                <div class="feature-card">
+                    <h3>🏈 The Car</h3>
+                    <p>Step inside Showdawg's legendary Corvette, signed by over 50 Cleveland Browns players. This rolling piece of Browns history is a testament to decades of dedication to the orange and brown.</p>
+                </div>
+            </a>
+            <a href="house.html" style="text-decoration: none; color: inherit;">
+                <div class="feature-card">
+                    <h3>🏠 The House</h3>
+                    <p>Explore the incredible collection of historical Browns artifacts housed in Showdawg's home—a shrine so impressive that the legendary Jim Brown himself paid a visit to witness the treasures within.</p>
+                </div>
+            </a>
+            <a href="podcast.html" style="text-decoration: none; color: inherit;">
+                <div class="feature-card">
+                    <h3>🎙️ The Podcast</h3>
+                    <p>Join us every Thursday for conversations about Browns football, superfandom, and the stories that make Cleveland the most passionate football city in America. Here We Go Brownies!</p>
+                </div>
+            </a>
         </div>
     </div>
 
