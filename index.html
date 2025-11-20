@@ -148,26 +148,55 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            white-space: nowrap;
-            padding: 1.25rem 0;
+            padding: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
         }
 
-        .ticker-content {
-            display: inline-block;
-            animation: scroll-left 30s linear infinite;
+        .sponsor-text {
             font-size: clamp(0.875rem, 2vw, 1.1rem);
             font-weight: 700;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 5px;
+            white-space: nowrap;
+            padding-left: clamp(1rem, 3vw, 3rem);
+            flex-shrink: 0;
+        }
+
+        .ticker-wrapper {
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 4rem;
+            animation: scroll-left 40s linear infinite;
+        }
+
+        .ticker-content img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+            transition: opacity 0.3s ease;
+        }
+
+        .ticker-content img:hover {
+            opacity: 1;
         }
 
         @keyframes scroll-left {
             0% {
-                transform: translateX(100%);
+                transform: translateX(0);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-50%);
             }
         }
 
@@ -500,11 +529,11 @@
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#sponsor">Sponsor Us</a></li>
-            <li><a href="#car">The Car</a></li>
-            <li><a href="#house">The House</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="sponsorus.html">Sponsor Us</a></li>
+            <li><a href="thecar.html">The Car</a></li>
+            <li><a href="thehouse.html">The House</a></li>
         </ul>
     </nav>
 
@@ -516,10 +545,48 @@
 
     <!-- Sponsor Ticker -->
     <div class="sponsor-ticker">
-        <div class="ticker-content">
-            🏈 THANK YOU TO OUR SPONSORS! 🏈 THANK YOU TO OUR SPONSORS! 🏈 THANK YOU TO OUR SPONSORS! 🏈 THANK YOU TO OUR SPONSORS! 🏈
+        <div class="sponsor-text">🏈 Thank You To Our Sponsors!</div>
+        <div class="ticker-wrapper">
+            <div class="ticker-content" id="sponsorTicker">
+                <!-- Logos will be inserted here by JavaScript -->
+            </div>
         </div>
     </div>
+
+    <script>
+        // Function to load sponsor logos
+        function loadSponsorLogos() {
+            const tickerContent = document.getElementById('sponsorTicker');
+            const sponsorLogos = [];
+            
+            // Check for sponsor1.png through sponsor15.png
+            for (let i = 1; i <= 15; i++) {
+                const img = document.createElement('img');
+                img.src = `images/sponsor${i}.png`;
+                img.alt = `Sponsor ${i}`;
+                img.style.display = 'none'; // Hide initially
+                
+                // Only show if image loads successfully
+                img.onload = function() {
+                    this.style.display = 'inline-block';
+                };
+                
+                // If image fails to load, don't show it
+                img.onerror = function() {
+                    this.remove();
+                };
+                
+                sponsorLogos.push(img);
+            }
+            
+            // Append all logos twice for seamless loop
+            sponsorLogos.forEach(img => tickerContent.appendChild(img));
+            sponsorLogos.forEach(img => tickerContent.appendChild(img.cloneNode(true)));
+        }
+        
+        // Load sponsors when page loads
+        window.addEventListener('DOMContentLoaded', loadSponsorLogos);
+    </script>
 
     <!-- Main Content -->
     <div class="container">
@@ -546,13 +613,13 @@
 
         <!-- Features -->
         <div class="features">
-            <a href="car.html" style="text-decoration: none; color: inherit;">
+            <a href="thecar.html" style="text-decoration: none; color: inherit;">
                 <div class="feature-card">
                     <h3>🏈 The Car</h3>
                     <p>Step inside Showdawg's legendary Corvette, signed by over 50 Cleveland Browns players. This rolling piece of Browns history is a testament to decades of dedication to the orange and brown.</p>
                 </div>
             </a>
-            <a href="house.html" style="text-decoration: none; color: inherit;">
+            <a href="thehouse.html" style="text-decoration: none; color: inherit;">
                 <div class="feature-card">
                     <h3>🏠 The House</h3>
                     <p>Explore the incredible collection of historical Browns artifacts housed in Showdawg's home—a shrine so impressive that the legendary Jim Brown himself paid a visit to witness the treasures within.</p>
