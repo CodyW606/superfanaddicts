@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsor Us - Superfan Addicts Podcast</title>
+    <title>The Car - Superfan Addicts Podcast</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -203,104 +203,8 @@
             padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
         }
 
-        /* Sponsorship Section */
-        .sponsorship-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-            color: #000000;
-            border-radius: 32px;
-            padding: clamp(3rem, 8vw, 6rem);
-            text-align: center;
-            margin-bottom: 4rem;
-            box-shadow: 
-                0 0 0 1px rgba(0, 0, 0, 0.05),
-                0 30px 80px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sponsorship-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 60, 0, 0.05) 0%, transparent 70%);
-        }
-
-        .sponsorship-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, #FF3C00 0%, #cc3000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2.5rem;
-            letter-spacing: -1px;
-            position: relative;
-            z-index: 1;
-            line-height: 1.1;
-        }
-
-        .sponsorship-section p {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            font-weight: 400;
-            color: #311D00;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #000000;
-            color: #ffffff;
-            padding: 1.5rem 3rem;
-            text-decoration: none;
-            border-radius: 100px;
-            font-weight: 700;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 
-                0 0 0 1px rgba(0, 0, 0, 0.1),
-                0 10px 30px rgba(0, 0, 0, 0.2);
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #FF3C00, #cc3000);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: -1;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 0 0 1px rgba(255, 60, 0, 0.3),
-                0 20px 50px rgba(255, 60, 0, 0.3);
-        }
-
-        .cta-button:hover::before {
-            opacity: 1;
-        }
-
-        /* Current Sponsors Section */
-        .current-sponsors-section {
+        /* Car Feature Section */
+        .car-feature-section {
             background: rgba(255, 60, 0, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 60, 0, 0.2);
@@ -312,9 +216,10 @@
                 0 20px 60px rgba(255, 60, 0, 0.1);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
-        .current-sponsors-section::before {
+        .car-feature-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -324,38 +229,84 @@
             background: linear-gradient(90deg, transparent, rgba(255, 60, 0, 0.5), transparent);
         }
 
-        .current-sponsors-section h2 {
+        .car-feature-section h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             color: #ffffff;
-            text-align: center;
             margin-bottom: 3rem;
             letter-spacing: -1px;
             line-height: 1.1;
+            position: relative;
+            z-index: 1;
         }
 
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            align-items: center;
-            justify-items: center;
+        .car-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 60, 0, 0.3);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 60, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 1;
         }
 
-        .sponsor-logo {
-            max-width: 200px;
-            height: auto;
-            max-height: 100px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-            transition: all 0.3s ease;
+        .car-image:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 
+                0 30px 80px rgba(255, 60, 0, 0.3),
+                0 0 0 1px rgba(255, 60, 0, 0.4);
         }
 
-        .sponsor-logo:hover {
-            opacity: 1;
-            transform: scale(1.05);
+        /* Coming Soon Section */
+        .coming-soon {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            color: #000000;
+            border-radius: 32px;
+            padding: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: 
+                0 0 0 1px rgba(0, 0, 0, 0.05),
+                0 30px 80px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 60, 0, 0.05) 0%, transparent 70%);
+        }
+
+        .coming-soon h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF3C00 0%, #cc3000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coming-soon p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 600;
+            color: #311D00;
+            position: relative;
+            z-index: 1;
         }
 
         /* Footer */
@@ -436,8 +387,8 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1>SPONSOR US</h1>
-        <p class="tagline">Partner with the Dawg Pound's Finest</p>
+        <h1>THE CAR</h1>
+        <p class="tagline">A Rolling Piece of Browns History</p>
     </div>
 
     <!-- Sponsor Ticker -->
@@ -451,7 +402,7 @@
     </div>
 
     <script>
-        // Function to load sponsor logos in ticker
+        // Function to load sponsor logos
         function loadSponsorLogos() {
             const tickerContent = document.getElementById('sponsorTicker');
             const sponsorLogos = [];
@@ -480,61 +431,29 @@
             sponsorLogos.forEach(img => tickerContent.appendChild(img));
             sponsorLogos.forEach(img => tickerContent.appendChild(img.cloneNode(true)));
         }
-
-        // Function to load sponsor logos in grid
-        function loadSponsorGrid() {
-            const sponsorsGrid = document.getElementById('sponsorsGrid');
-            
-            // Check for sponsor1.png through sponsor15.png
-            for (let i = 1; i <= 15; i++) {
-                const img = document.createElement('img');
-                img.src = `images/sponsor${i}.png`;
-                img.alt = `Sponsor ${i}`;
-                img.className = 'sponsor-logo';
-                img.style.display = 'none'; // Hide initially
-                
-                // Only show if image loads successfully
-                img.onload = function() {
-                    this.style.display = 'block';
-                };
-                
-                // If image fails to load, don't show it
-                img.onerror = function() {
-                    this.remove();
-                };
-                
-                sponsorsGrid.appendChild(img);
-            }
-        }
         
         // Load sponsors when page loads
-        window.addEventListener('DOMContentLoaded', function() {
-            loadSponsorLogos();
-            loadSponsorGrid();
-        });
+        window.addEventListener('DOMContentLoaded', loadSponsorLogos);
     </script>
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Sponsorship Section -->
-        <div class="sponsorship-section">
-            <h2>SPONSOR THE SUPERFAN ADDICTS PODCAST</h2>
-            <p>For more information on how to be featured as one of our three tiers of sponsors, please message us on Facebook.</p>
-            <a href="https://www.facebook.com/profile.php?id=61574121635752" target="_blank" class="cta-button">Message Us on Facebook</a>
+        <!-- Car Feature Section -->
+        <div class="car-feature-section">
+            <h2>Showdawg's Legendary Corvette</h2>
+            <img src="images/car1.png" alt="Showdawg's Browns Corvette" class="car-image">
         </div>
 
-        <!-- Current Sponsors Section -->
-        <div class="current-sponsors-section">
-            <h2>OUR CURRENT SPONSORS</h2>
-            <div class="sponsors-grid" id="sponsorsGrid">
-                <!-- Sponsor logos will be inserted here by JavaScript -->
-            </div>
+        <!-- Coming Soon Section -->
+        <div class="coming-soon">
+            <h2>More Information Coming Soon!</h2>
+            <p>Check back soon for the full story of this incredible Browns masterpiece.</p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Superfan Addicts Podcast. All Rights Reserved. | Dawg Pound Forever 🐕</p>
+        <p>&copy; 2024 Superfan Addicts Podcast. All Rights Reserved. | Dawg Pound Forever 🐕</p>
     </footer>
 </body>
 </html>
